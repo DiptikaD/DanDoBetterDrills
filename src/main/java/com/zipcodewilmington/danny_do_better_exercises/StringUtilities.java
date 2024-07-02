@@ -61,7 +61,8 @@ public class StringUtilities {
     public static Character getMiddleCharacter(String inputValue){
 
         if ((inputValue.length()/2)%2==0){
-            return inputValue.charAt((inputValue.length()/2 +(1)));
+            int middle = inputValue.length()/2-1;
+            return inputValue.charAt((middle));
         }
         return inputValue.charAt(inputValue.length()/2);
     }
@@ -73,7 +74,10 @@ public class StringUtilities {
     public static String getFirstWord(String spaceDelimitedString){
 //        int space = spaceDelimitedString.
 //        return spaceDelimitedString.;
-        return null;
+        int space = spaceDelimitedString.indexOf(" ");
+        String firstWord = spaceDelimitedString.substring(0, space);
+
+        return firstWord;
     }
 
     /**
@@ -81,7 +85,13 @@ public class StringUtilities {
      * @return the second word of a string delimited by spaces.
      */
     public static String getSecondWord(String spaceDelimitedString){
-        return null;
+//        int firstSpace = spaceDelimitedString.indexOf(" ");
+//        int lastSpace = spaceDelimitedString.lastIndexOf(" ");
+//        String firstWord = spaceDelimitedString.substring(firstSpace, lastSpace);
+
+        String allTheWords[] = spaceDelimitedString.split(" ");
+        int whichWord = allTheWords.length;
+        return allTheWords[1];
     }
 
     /**
